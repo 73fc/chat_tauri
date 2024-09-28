@@ -21,7 +21,7 @@ interface StatusObj {
 
 export const useChatStore = defineStore('chat', () => {
     const ChatObj = ref<ChatObj>({
-        // 聊天室1: [
+        // 对话1: [
         //     {
         //         question: '你好1',
         //         answer: '你好啊1'
@@ -31,22 +31,22 @@ export const useChatStore = defineStore('chat', () => {
         //         answer: '你好啊2'
         //     }
         // ],
-        // 聊天室2: [
+        // 对话2: [
         //     {
-        //         question: '聊天室2-你好1',
-        //         answer: '聊天室2-你好啊1'
+        //         question: '对话2-你好1',
+        //         answer: '对话2-你好啊1'
         //     },
         //     {
-        //         question: '聊天室2-你好2',
-        //         answer: '聊天室2-你好啊2'
+        //         question: '对话2-你好2',
+        //         answer: '对话2-你好啊2'
         //     }
         // ]
     })
 
-    // 聊天室阻塞状态管理
+    // 对话阻塞状态管理
     const statusObj = ref<StatusObj>({})
 
-    const nowChatName = ref<string>('聊天室1') // 当前正在用的聊天室
+    const nowChatName = ref<string>('对话1') // 当前正在用的对话
 
     const chatRoomList = computed(() => {
         return Object.keys(ChatObj.value)
@@ -57,7 +57,7 @@ export const useChatStore = defineStore('chat', () => {
     })
 
     /**
-     * 新增聊天室
+     * 新增对话
      * @param chatName
      */
     const addChat = (chatName: string) => {
@@ -73,7 +73,7 @@ export const useChatStore = defineStore('chat', () => {
             })
         } else {
             ElMessage({
-                message: '聊天室不能重名',
+                message: '对话不能重名',
                 type: 'warning'
             })
         }
@@ -146,7 +146,7 @@ export const useChatStore = defineStore('chat', () => {
     }
 
     /**
-     * @param chatName 切换聊天室
+     * @param chatName 切换对话
      */
     const changeChatRoom = (chatName: string) => {
         nowChatName.value = chatName

@@ -15,7 +15,7 @@ const addChat = () => {
         emit('submit')
     } else {
         ElMessage({
-            message: '请输入聊天室名字',
+            message: '请输入对话名字',
             type: 'warning'
         })
     }
@@ -25,8 +25,8 @@ const addChat = () => {
 <template>
     <div class="home-page">
         <div class="flex2 home-page">
-            <h1>新建聊天室</h1>
-            <el-input v-model="chatName" class="add-chat-input" placeholder="请输入聊天室名字"></el-input>
+            <h1>新建对话</h1>
+            <el-input v-model="chatName" class="add-chat-input" placeholder="请输入对话名字"></el-input>
             <el-button class="add-chat-btn" type="primary" @click="addChat">新建</el-button>
         </div>
         <div class="flex1"></div>

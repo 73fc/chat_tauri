@@ -87,9 +87,9 @@ const copyFun = (content: string) => {
 <template>
     <div class="chat-page">
         <div class="chat-room-list">
-            <div class="chat-room-title">聊天室列表</div>
+            <div class="chat-room-title">对话列表</div>
             <el-button color="#615ced" class="add-chat-room-btn" round :icon="Plus" @click="showAddDialog"
-                >新建聊天室</el-button
+                >新建对话</el-button
             >
             <div
                 :class="`${item === ChatStore.nowChatName ? 'chat-room-item-active' : 'chat-room-item'}`"
@@ -140,7 +140,7 @@ const copyFun = (content: string) => {
             </div>
         </div>
 
-        <el-dialog v-model="showAddChatRoomDialog" destroy-on-close title="新建聊天室" width="500">
+        <el-dialog v-model="showAddChatRoomDialog" destroy-on-close title="新建对话" width="500">
             <Home @submit="closeAddDialog"></Home>
         </el-dialog>
     </div>
